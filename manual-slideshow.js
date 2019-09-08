@@ -73,7 +73,10 @@ var theModal = (function () {
     // Make the full screen button work properly.
     f.addEventListener("click", fullScreen);
     function fullScreen() {
-        if (document.fullscreenElement) {
+        if (document.fullscreenElement ||
+	    document.webkitFulscreenElement ||
+	    document.mozFullScreenElement ||
+	    document.msFullscreenElement) {
             closeFullScreen();
         } else if (modal.requestFullscreen) {
             modal.requestFullscreen();
