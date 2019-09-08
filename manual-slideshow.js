@@ -92,11 +92,11 @@ var theModal = (function () {
     function closeFullScreen() {
         if (document.exitFullscreen) {
             document.exitFullscreen();
-        } else if (e.mozCancelFullScreen) {
+        } else if (document.mozCancelFullScreen) {
             document.mozCancelFullScreen();
-        } else if (e.webkitExitFullscreen) {
+        } else if (document.webkitExitFullscreen) {
             document.webkitExitFullscreen();
-        } else if (e.msExitFullscreen) {
+        } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
     }
