@@ -5,11 +5,11 @@ center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
 tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section,
 summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
 }
 *, :before, :after {box-sizing: border-box;}
 body {font-family: serif; line-height: 1;}
@@ -38,6 +38,8 @@ ul {
   font-variant: small-caps;
 }
 li {padding: 15px;}
+
+/* The modal */
 #slide-modal {
   display: none;
   position: fixed;
@@ -49,6 +51,8 @@ li {padding: 15px;}
   color: White;
   background-color: rgba(0,0,0,0.9);
 }
+
+/* The responsive image in slideshow that won't be larger than original size. */
 #modal-content {
   display: block;
   margin: auto;
@@ -106,6 +110,7 @@ li {padding: 15px;}
   vertical-align: middle;
   width: 100%;
 }
+
 /* Create two columns */
 @media screen and (min-width: 550px) {
   .column {
@@ -113,6 +118,8 @@ li {padding: 15px;}
     -ms-flex: 50%;
     max-width: 50%;
   }
+  h1 {font-size: 2.5em;}
+  h2 {font-size: 1.5em;}
 }
 
 /* Create four columns */

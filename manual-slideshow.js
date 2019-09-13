@@ -90,7 +90,7 @@ var theModal = (function () {
     }
 
     function closeFullScreen() {
-        if (document.exitFullscreen) {
+        if (document.exitFullscreen && document.fullscreenElement) {
             document.exitFullscreen();
         } else if (document.mozCancelFullScreen) {
             document.mozCancelFullScreen();
