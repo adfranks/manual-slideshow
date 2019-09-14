@@ -81,6 +81,7 @@ var theModal = (function () {
     modalImage.addEventListener("touchmove", getMoveLoc);
     function getMoveLoc(event) {
         ending = event.touches[0].clientX;
+	event.preventDefault();
     }
     
     modalImage.addEventListener("touchend", dirTouch);
