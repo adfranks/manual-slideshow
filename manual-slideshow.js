@@ -85,9 +85,9 @@ var theModal = (function () {
     
     modalImage.addEventListener("touchend", dirTouch);
     function dirTouch(event) {
-	if (ending > (beginning + 50)) {
+	if (ending < (beginning - 50)) {
 	    changeSlide(1);
-	} else if (ending < (beginning - 50)) {
+	} else if (ending > (beginning + 50)) {
 	    changeSlide(-1)
 	}
     }
