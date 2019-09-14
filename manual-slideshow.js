@@ -81,7 +81,6 @@ var theModal = (function () {
     modalImage.addEventListener("touchmove", getMoveLoc);
     function getMoveLoc(event) {
         ending = event.touches[0].clientX;
-	event.preventDefault();
     }
     
     modalImage.addEventListener("touchend", dirTouch);
@@ -91,6 +90,8 @@ var theModal = (function () {
 	} else if (ending > (beginning + 50)) {
 	    changeSlide(-1)
 	}
+	beginning = null;
+	ending = null;
     }
 
     // Make the full screen button work properly.
