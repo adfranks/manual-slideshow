@@ -73,14 +73,18 @@ var theModal = (function () {
     }
 	
     //  Allow for a moblie friendly swipe instead of left & right buttons.
-    modalImage.addEventListener("touchstart", getCoords);
-    function getCoords(event) {
+    modalImage.addEventListener("touchstart", getLoc);
+    function getLoc(event) {
         beginning = event.touches[0].clientX;
     }
 
+    modalImage.addEventListener("touchmove", getMoveLoc);
+    function getMoveLoc(event) {
+        ending = event.touches[0].clientX;
+    }
+    
     modalImage.addEventListener("touchend", dirTouch);
     function dirTouch(event) {
-        ending = event.touches[0].clientX;
 	if (ending > (beginning + 50)) {
 	    changeSlide(1);
 	} else if (ending < (beginning - 50)) {
