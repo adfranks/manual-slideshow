@@ -9,7 +9,9 @@ var theModal = (function () {
     p = document.getElementById("previous"),
     f = document.getElementById("full"),
     x = document.getElementById("close"),
-    slideNumber = 1;
+    slideNumber = 1,
+    beginning,
+    ending;
 
     // Make a click on the gallery image open the modal and display the image.
     for (i = 0; i < slides.length; i++) {
@@ -49,8 +51,8 @@ var theModal = (function () {
     }
 
     // Activate the next and previous buttons.
-    window.addEventListener("click", addE);
-    function addE(event) {
+    window.addEventListener("click", dirMouse);
+    function dirMouse(event) {
         if (event.target === n) {
             changeSlide(1);
         } else if (event.target === p) {
@@ -67,7 +69,23 @@ var theModal = (function () {
         } else {
             slideNumber += d;
         }
-        modalImage.src = document.getElementsByClassName("slide")[slideNumber -1].src;
+        modalImage.src = slides[slideNumber - 1].src;
+    }
+	
+    //  Allow for a moblie friendly swipe instead of left & right buttons.
+    modalImage.addEventListener("touchstart", getCoords);
+    function getCoords(event) {
+        beginning = event.touches[0].clientX;
+    }
+
+    modalImage.addEventListener("touchmove", dirTouch);
+    function dirTouch(event) {
+        ending = event.touches[0].clientX;
+	if (ending > (beginning + 50)) {
+	    changeSlide(1);
+	} else if (ending < (beginning - 50)) {
+	    changeSlide(-1)
+	}
     }
 
     // Make the full screen button work properly.
