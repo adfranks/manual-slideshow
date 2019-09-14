@@ -90,6 +90,7 @@ var theModal = (function () {
 	} else if (ending > (beginning + 50)) {
 	    changeSlide(-1)
 	}
+	beginning = null;
 	x.innerHTML = beginning;
     }
 
