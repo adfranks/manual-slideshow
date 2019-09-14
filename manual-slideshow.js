@@ -91,6 +91,7 @@ var theModal = (function () {
 	    changeSlide(-1)
 	}
 	beginning = null;
+	ending = null;
 	x.innerHTML = beginning;
     }
 
