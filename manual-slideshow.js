@@ -78,7 +78,7 @@ var theModal = (function () {
         beginning = event.touches[0].clientX;
     }
 
-    modalImage.addEventListener("touchmove", dirTouch);
+    modalImage.addEventListener("touchend", dirTouch);
     function dirTouch(event) {
         ending = event.touches[0].clientX;
 	if (ending > (beginning + 50)) {
