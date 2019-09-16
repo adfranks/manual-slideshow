@@ -89,7 +89,7 @@ var theModal = (function () {
 	if (ending < (beginning - 50)) {
 	    changeSlide(1);
 	} else if (ending > (beginning + 50)) {
-	    changeSlide(-1)
+	    changeSlide(-1);
 	}
 	ending = null;
     }
