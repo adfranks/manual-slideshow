@@ -3,58 +3,52 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Slideshow</title>
-  <meta name="keywords" content="automatic slideshow, responsive, image gallery" />
-  <meta name="description" content="responsive image slideshow" />
+  <title>Manual Slideshow</title>
+  <meta name="keywords" content="manual slideshow, responsive, image gallery" />
+  <meta name="description" content="responsive manual image slideshow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="auto-slideshow.css">
+  <link rel="stylesheet" type="text/css" href="manual-slideshow.css">
 </head>
 
 <body>
 
   <header>
-    <h1>Automatic Slideshow</h1>
-    <p>This is a responsive gallery and slideshow with automatic and manual
-    controls capable of being displayed in full screen and taking various sizes
-    and orientations.  Click on an image to open the modal and slideshow.</p>
+    <h1>Manual Slideshow</h1>
+    <p>This is a responsive gallery and manual slideshow modal capable of taking both
+    portrait and landscape orientations.  Click on an image to open the modal and slideshow.</p>
   </header>
 
-  <!-- the responsive gallery separated into columns -->
   <main>
     <div class="column">
-      <img id="1" class="slide" src="images/alicante-spain.jpg" alt="graffiti" />
-      <img id="2" class="slide" src="images/manzanillo-costa-rica.jpg" alt="horses" />
-      <img id="3" class="slide" src="images/southern-france.jpg" alt="south of France in winter" />
+      <img id="1" class="slide" src="images/bridge-london-england.jpg" alt="Thames River in London" />
+      <img id="2" class="slide" src="images/bicycle-amsterdam.jpg" alt="Purple bicycle on side of Amsterdam street" />
+      <img id="3" class="slide" src="images/california.jpg" alt="Central california landscape" />
     </div>
     <div class="column">
-      <img id="4" class="slide" src="images/canterbury-new-hampshire.jpg" alt="owner built house" />
-      <img id="5" class="slide" src="images/somerville-massachusetts.jpg" alt="Knapp street" />
-      <img id="6" class="slide" src="images/fairview-cemetery-westford-massachusetts.jpg" alt="autumn in an old cemetery" />
+      <img id="4" class="slide" src="images/ayers-road-canterbury.jpg" alt="Inside of owner built home in New Hampshire" />
+      <img id="5" class="slide" src="images/cat-cambridge-massachusetts.jpg" alt="Dexy the cat" />
+      <img id="6" class="slide" src="images/kansas.jpg" alt="autumn in an old cemetery" />
     </div>
     <div class="column">
-      <img id="7" class="slide" src="images/seville-graffiti.jpg" alt="graffiti in Seville" />
-      <img id="8" class="slide" src="images/canyonlands-utah.jpg" alt="Canyonlands National Park" />
-      <img id="9" class="slide" src="images/seville-spain.jpg" alt="plaza in Seville" />
+      <img id="7" class="slide" src="images/north-california.jpg" alt="Northern California landscape" />
+      <img id="8" class="slide" src="images/miami-florida-graffiti.jpg" alt="graffiti in Miami" />
+      <img id="0" class="slide" src="images/shenandoah-virginia.jpg" alt="Appalachian Mountains in Virginia" />
+      <img id="10" class="slide" src="images/pink-baltimore-maryland.jpg" alt="Spring in historic Baltimore" />
     </div>
     <div class="column">
-      <img id="10" class="slide" src="images/autumn-new-hampshire.jpg" alt="fall foliage in New Hampshire" />
-      <img id="11" class="slide" src="images/savannah-georgia.jpg" alt="historic houses in Savannah" />
-      <img id="12" class="slide" src="images/pamm-miami.jpg" alt="Perez Art Museum Miami" />
-      <img id="13" class="slide" src="images/moose-vermont.jpg" alt="moose quenching thirst in Vermont" />
+      <img id="11" class="slide" src="images/seattle-washington.jpg" alt="Volunteer Park in Seattle" />
+      <img id="12" class="slide" src="images/xmas-amsterdam-netherlands.jpg" alt="Winter in Holland" />
+      <img id="13" class="slide" src="images/winter-alicante-spain.jpg" alt="Interior of house in Massachusetts" />
     </div>
   </main>
   
   <!-- the modal for the responsive slideshow -->
   <div id="slide-modal">
-    <div id="wrap">
-      <a id="close" class="controls">&times;</a>
-      <a id="expand" class="controls">&#9974;</a>
-      <a id="previous" class="controls">&#8672;</a>
-      <a id="next" class="controls">&#8674;</a>
-      <a id="stop" class="controls">&#10074;&#10074;</a>
-      <a id="automatic" class="controls">&#9658;</a>
-    </div>
-    <img id="modal-content" src="images/alicante-spain.jpg" alt="image in a slideshow" />
+    <a id="close" class="slider-button">&times;</a>
+    <a id="full" class="slider-button">&#10529;</a>
+    <a id="previous" class="slider-button">&#8249;</a>
+    <a id="next" class="slider-button">&#8250;</a>
+    <img id="modal-content" src="images/bridge-london-england.jpg" alt="image in slideshow" />
   </div>
 
   <footer>
@@ -65,7 +59,7 @@
     </ul>
   </footer>
 
-<script src="auto-slideshow.js"></script>
+<script src="manual-slideshow.js"></script>
 
 </body> 
 
