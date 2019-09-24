@@ -1,7 +1,7 @@
 /* Create a responsive slide show in a modal.  Criteria is it takes both
 portrait and landscape orientations and does not overflow the screen
 triggering the scroll bar. */
-var theModal = (function () {
+(function () {
     var modal = document.getElementById("slide-modal"),
     slides = document.getElementsByClassName("slide"),
     modalImage = document.getElementById("modal-content"),
@@ -10,8 +10,8 @@ var theModal = (function () {
     f = document.getElementById("full"),
     x = document.getElementById("close"),
     slideNumber = 1,
-    beginning,
-    ending;
+    beginning, ending, i;
+    
 
     // Make a click on the gallery image open the modal and display the image.
     for (i = 0; i < slides.length; i++) {
@@ -124,4 +124,4 @@ var theModal = (function () {
             document.msExitFullscreen();
         }
     }
-})(); 
+}()); 
