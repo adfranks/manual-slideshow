@@ -85,13 +85,13 @@ triggering the scroll bar. */
     
     modalImage.addEventListener("touchend", dirTouch);
     function dirTouch(event) {
-	if (ending === null) {return;}
-	if (ending < (beginning - 50)) {
-	    changeSlide(1);
-	} else if (ending > (beginning + 50)) {
-	    changeSlide(-1);
-	}
-	ending = null;
+        if (ending === null) {return;}
+        if (ending < (beginning - 50)) {
+            changeSlide(1);
+        } else if (ending > (beginning + 50)) {
+            changeSlide(-1);
+        }
+        ending = null;
     }
 
     // Make the full screen button work properly.
