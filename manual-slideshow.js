@@ -59,20 +59,8 @@ triggering the scroll bar. */
             changeSlide(-1);
         }
     }
-
-    // Have the image source changed to display a different image.
-    function changeSlide(d) {
-        if (slideNumber == 1 && d === -1) {
-            slideNumber = slides.length;
-        } else if (slideNumber == (slides.length) && d === 1) {
-            slideNumber = 1;
-        } else {
-            slideNumber += d;
-        }
-        modalImage.src = slides[slideNumber - 1].src;
-    }
 	
-    //  Allow for a moblie friendly swipe instead of left & right buttons.
+    //  Allow for a moblie friendly swipe instead of next & previous buttons.
     modalImage.addEventListener("touchstart", getLoc);
     function getLoc(event) {
         beginning = event.touches[0].clientX;
@@ -123,5 +111,17 @@ triggering the scroll bar. */
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
+    }
+
+    // Have the image source changed to display a different image.
+    function changeSlide(d) {
+        if (slideNumber == 1 && d === -1) {
+            slideNumber = slides.length;
+        } else if (slideNumber == (slides.length) && d === 1) {
+            slideNumber = 1;
+        } else {
+            slideNumber += d;
+        }
+        modalImage.src = slides[slideNumber - 1].src;
     }
 }()); 
