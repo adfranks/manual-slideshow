@@ -118,6 +118,15 @@ li {padding: 15px;}
     max-width: 50%;
   }
   h1 {font-size: 5em;}
+}
+
+/* Create four columns for larger screens. */
+@media screen and (min-width: 900px) {
+  .column {
+    flex: 25%;
+    -ms-flex: 25%;
+    max-width: 25%;
+  }
   #next, #previous, #full {display: inline;}
   #next {
     left: 12%;
@@ -129,17 +138,5 @@ li {padding: 15px;}
   }
   #full {
     right: 12%;
-  }
-  #close {
-    right: 3%;
-  }
-}
-
-/* Create four columns for larger screens. */
-@media screen and (min-width: 900px) {
-  .column {
-    flex: 25%;
-    -ms-flex: 25%;
-    max-width: 25%;
   }
 }
