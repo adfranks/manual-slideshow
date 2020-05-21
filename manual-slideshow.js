@@ -87,7 +87,7 @@ triggering the scroll bar. */
     f.addEventListener("click", fullScreen);
     function fullScreen() {
         if (document.fullscreenElement ||
-	    document.webkitFulscreenElement ||
+	    document.webkitFullscreenElement ||
 	    document.mozFullScreenElement ||
 	    document.msFullscreenElement) {
             closeFullScreen();
