@@ -25,7 +25,7 @@ triggering the scroll bar. */
     }
 
     // Allow the modal to be closed easily.
-    window.addEventListener("click", clickClose);
+    modal.addEventListener("click", clickClose);
     function clickClose(event) {
         if (event.target === modal || event.target === x) {
             modal.style.display = "none";
