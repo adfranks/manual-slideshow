@@ -86,19 +86,22 @@ triggering the scroll bar. */
     }
 
     // Make the full screen button work properly.
+    window.addEventListener("click", fullScreen);
     f.addEventListener("click", fullScreen);
-    function fullScreen() {
-      if (document.fullscreenElement || document.webkitFullscreenElement ||
-      document.mozFullScreenElement || document.msFullscreenElement) {
-        closeFullScreen();
-      } else if (modal.requestFullscreen) {
-        modal.requestFullscreen();
-      } else if (modal.mozRequestFullScreen) {
-        modal.mozRequestFullScreen();
-      } else if (modal.webkitRequestFullscreen) {
-        modal.webkitRequestFullscreen();
-      } else if (modal.msRequestFullscreen) {
-        modal.msRequestFullscreen();
+    function fullScreen(event) {
+      if (event.target === f) {
+        if (document.fullscreenElement || document.webkitFullscreenElement ||
+        document.mozFullScreenElement || document.msFullscreenElement) {
+          closeFullScreen();
+        } else if (modal.requestFullscreen) {
+          modal.requestFullscreen();
+        } else if (modal.mozRequestFullScreen) {
+          modal.mozRequestFullScreen();
+        } else if (modal.webkitRequestFullscreen) {
+          modal.webkitRequestFullscreen();
+        } else if (modal.msRequestFullscreen) {
+          modal.msRequestFullscreen();
+        }
       }
     }
 
