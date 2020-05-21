@@ -87,6 +87,8 @@ triggering the scroll bar. */
 
     // Make the full screen button work properly.
     f.addEventListener("click", fullScreen);
+     modal.requestFullscreen();
+     modal.webkitRequestFullscreen();
     function fullScreen() {
       if (document.fullscreenElement || document.webkitFullscreenElement ||
       document.mozFullScreenElement || document.msFullscreenElement) {
