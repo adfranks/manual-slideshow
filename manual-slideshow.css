@@ -1,10 +1,12 @@
+/* Mobile first styling for a gallery and slideshow */
+/* Start with a relatively clean slate */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
-img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
-legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
-canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, 
-nav, output, ruby, section, summary, time, mark, audio, video {
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -13,10 +15,18 @@ nav, output, ruby, section, summary, time, mark, audio, video {
 }
 *, :before, :after {box-sizing: border-box;}
 
+/* Style the basic elements */
 body {font-family: serif; line-height: 1;}
 header, footer {padding: 32px;}
 header {
   text-align: left;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  display: -ms-flexbox; /* IE10 */
+  -ms-flex-wrap: wrap;
+  padding: 0 3px;
 }
 footer a {
   background-color: RoyalBlue;
@@ -31,15 +41,17 @@ footer a:hover {
 }
 h1, h2, p, ul {padding: 5px;}
 h1, h2 {font-family: Garamond, Palatino, Georgia, serif; line-height: 1;}
-h1 {font-size: 4em;}
+h1 {font-size: 3em;}
 h2 {font-size: 2.5em;}
-p {font-size: 1.25em;}
+p {font-size: 1.25em; line-height: 1.25;}
 ul {
   list-style-type: none; 
   font-variant: small-caps;
 }
 li {padding: 15px;}
 
+/* Style the elements with an id. */
+/* The modal that houses the slideshow. */
 #slide-modal {
   display: none;
   position: fixed;
@@ -51,6 +63,8 @@ li {padding: 15px;}
   color: White;
   background-color: rgba(0,0,0,0.9);
 }
+
+/* The responsive image in slideshow that won't be larger than original size. */
 #modal-content {
   display: block;
   margin: auto;
@@ -60,11 +74,14 @@ li {padding: 15px;}
   max-width: 100%;
   max-height: 100%;
 }
-#next, #previous, #full {display: none;}
+#next, #previous, #full {
+  display: none;
+}
 #close {
   right: 3%;
 }
 
+/* Style the elements with a class. */
 .slider-button {
   position: absolute;
   top: 2%;
@@ -81,13 +98,6 @@ li {padding: 15px;}
   color: LightGray;
   background-color: rgba(0,0,0,0.4);
 }
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  display: -ms-flexbox; /* IE10 */
-  -ms-flex-wrap: wrap;
-  padding: 0 3px;
-}
 .column {
   flex: 100%;
   -ms-flex: 100%;
@@ -100,23 +110,14 @@ li {padding: 15px;}
   width: 100%;
 }
 
-/* Create two columns */
+/* Create two columns and adjustments for a tablet size. */
 @media screen and (min-width: 550px) {
   .column {
     flex: 50%;
     -ms-flex: 50%;
     max-width: 50%;
   }
-}
-
-/* Create four columns */
-@media screen and (min-width: 900px) {
-  .column {
-    flex: 25%;
-    -ms-flex: 25%;
-    max-width: 25%;
-  }
-
+  h1 {font-size: 5em;}
   #next, #previous, #full {display: inline;}
   #next {
     left: 12%;
@@ -128,5 +129,17 @@ li {padding: 15px;}
   }
   #full {
     right: 12%;
+  }
+  #close {
+    right: 3%;
+  }
+}
+
+/* Create four columns for larger screens. */
+@media screen and (min-width: 900px) {
+  .column {
+    flex: 25%;
+    -ms-flex: 25%;
+    max-width: 25%;
   }
 }
