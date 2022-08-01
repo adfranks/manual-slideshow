@@ -1,2 +1,2 @@
-# manual-slideshow
+# Basic Slideshow
 Responsive manual slideshow in a modal
